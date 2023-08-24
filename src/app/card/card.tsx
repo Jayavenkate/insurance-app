@@ -32,8 +32,8 @@ function Card() {
   }, []);
   return (
     <div>
-      {data.map((item: any) => (
-        <CardWrapper >
+      {data.map((item: any, id: number) => (
+        <CardWrapper key={id}>
           <div>
             <CardContainer style={{ position: "absolute" }}>
               <CardHeader>

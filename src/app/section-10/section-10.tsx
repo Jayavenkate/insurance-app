@@ -8,7 +8,6 @@ import {
   Frame6description,
   Frame6header,
   Header,
-  
 } from "./section-10.styled";
 
 const SectionTen = () => {
@@ -49,8 +48,8 @@ const SectionTen = () => {
   };
   return (
     <>
-      {data.map((item: any) => (
-        <div>
+      {data.map((item: any, id: number) => (
+        <div key={id}>
           <ButtonWraper>
             {item?.attributes.section_10s.data[0].attributes.buttontext}
           </ButtonWraper>

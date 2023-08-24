@@ -27,9 +27,13 @@ const SectionFour = () => {
 
   return (
     <>
-      {data.map((item: any) => (
-       
-        <Grid container spacing={2} sx={{ marginTop: "100px",marginLeft:"300px" }}>
+      {data.map((item: any, id: number) => (
+        <Grid
+          container
+          spacing={2}
+          sx={{ marginTop: "100px", marginLeft: "300px" }}
+          key={id}
+        >
           <Grid>
             <ButtonWrapper>
               {item?.attributes.section_4s.data[0]?.attributes.buttontext}

@@ -34,8 +34,8 @@ const SectionSix = () => {
 
   return (
     <>
-      {data.map((item: any) => (
-        <div>
+      {data.map((item: any,id:number) => (
+        <div key={id}>
           <Title>{item?.attributes.section_6s.data[0]?.attributes.title}</Title>
           <Grid container spacing={2} sx={{ marginTop: "40px" }}>
             <GridContainer item xs={12} md={6}>

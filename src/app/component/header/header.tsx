@@ -34,11 +34,15 @@ function Header() {
   }, []);
   return (
     <div style={{ padding: "10px 0px", margin: "10px 0px" }}>
-      {data.map((item: any) => (
-        <AppBar sx={{ background: "none", boxShadow: "none" }} position="fixed">
+      {data.map((item: any, id: number) => (
+        <AppBar
+          sx={{ background: "none", boxShadow: "none" }}
+          position="fixed"
+          key={id}
+        >
           <Toolbar>
             <TitleContainer variant="h6">
-             <img src="./image/Logo.png" alt="" />
+              <img src="./image/Logo.png" alt="" />
             </TitleContainer>
             <ButtonContainer>
               <ButtonWraper>

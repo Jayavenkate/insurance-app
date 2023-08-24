@@ -42,13 +42,14 @@ const Footer = () => {
   };
   return (
     <>
-      {data.map((item: any) => (
+      {data.map((item: any, id: number) => (
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}
+          key={id}
         >
           <div>
             <img src="./image/Logo.png" />

@@ -33,11 +33,12 @@ const Content = () => {
 
   return (
     <>
-      {data.map((item: any) => (
+      {data.map((item: any, id: number) => (
         <Grid
           container
           spacing={2}
           sx={{ marginTop: "100px", marginLeft: "300px" }}
+          key={id}
         >
           <Grid item xs={12} md={6}>
             <div style={{ width: "450px" }}>

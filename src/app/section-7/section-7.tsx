@@ -34,8 +34,8 @@ const SectionSeven = () => {
 
   return (
     <>
-      {data.map((item: any) => (
-        <DivContainer>
+      {data.map((item: any,id:number) => (
+        <DivContainer key={id}>
           <Divwrapper>
             <img src="./image/icon-1.png" alt="" />
             <Title1>

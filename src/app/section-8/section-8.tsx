@@ -42,8 +42,8 @@ const SectionEight = () => {
 
   return (
     <>
-      {data.map((item: any) => (
-        <div>
+      {data.map((item: any,id:number) => (
+        <div key={id}>
           <div>
             <ButtonWraper>
               <Title>

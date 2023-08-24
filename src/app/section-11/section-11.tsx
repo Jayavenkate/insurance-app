@@ -27,7 +27,7 @@ const SectionEleven = () => {
 
   return (
     <>
-      {data.map((item: any) => (
+      {data.map((item: any, id: number) => (
         <Card
           sx={{
             backgroundColor: "#B79C75",
@@ -41,6 +41,7 @@ const SectionEleven = () => {
             justifyContent: "center",
             gap: "40px",
           }}
+          key={id}
         >
           <div>
             <Header>

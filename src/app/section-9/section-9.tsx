@@ -35,9 +35,9 @@ const SectionNine = () => {
 
   return (
     <>
-      {data.map((item: any) => (
-        <Grid container spacing={2} sx={{ marginTop: "50px" }}>
-          <Grid md={6}>
+      {data.map((item: any, id: number) => (
+        <Grid container spacing={2} sx={{ marginTop: "50px" }} key={id}>
+          <Grid item xs={12} md={6}>
             <Header>
               {item?.attributes.section_9s.data[0].attributes.header}
             </Header>
@@ -46,7 +46,7 @@ const SectionNine = () => {
             </Description>
             <img src="./image/section9-A.png" />
           </Grid>
-          <Grid md={6}>
+          <Grid item xs={12} md={6}>
             <img src="./image/section9-B.png" />
             <div style={{ display: "flex", gap: "10px" }}>
               <div>
