@@ -32,7 +32,7 @@ function Header() {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/homepages?populate=*",
+          "https://insuranceapp.onrender.com/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -97,7 +97,6 @@ function Header() {
                 <MenuIcon />
               </IconButton>
               <Menu
-                
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 open={Boolean(anchorElNav)}
