@@ -4,20 +4,35 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
+import MenuIcon from "@mui/icons-material/Menu";
+
 import {
+  AppBarWraper,
   ButtonContainer,
   ButtonWraper,
+  DivWraper,
   RightButton,
   TitleContainer,
 } from "./header.styled";
+import { Box, IconButton, Menu } from "@mui/material";
 
 function Header() {
   const [data, setData] = useState([]);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -32,43 +47,76 @@ function Header() {
     };
     fetchdata();
   }, []);
+  const renderButton = (item: any) => {
+    return (
+      <>
+        <ButtonWraper>
+          {item?.attributes.navbars.data[0]?.attributes.menu1}
+        </ButtonWraper>
+        <ButtonWraper>
+          {item?.attributes.navbars.data[0]?.attributes.menu2}
+        </ButtonWraper>
+        <ButtonWraper>
+          {item?.attributes.navbars.data[0]?.attributes.menu3}
+        </ButtonWraper>
+        <ButtonWraper>
+          {item?.attributes.navbars.data[0]?.attributes.menu4}
+        </ButtonWraper>
+        <ButtonWraper>
+          {item?.attributes.navbars.data[0]?.attributes.menu5}
+        </ButtonWraper>
+        <ButtonWraper>
+          <SearchIcon />
+        </ButtonWraper>
+      </>
+    );
+  };
   return (
-    <div style={{ padding: "10px 0px", margin: "10px 0px" }}>
+    <DivWraper>
       {data.map((item: any, id: number) => (
-        <AppBar
-          sx={{ background: "none", boxShadow: "none" }}
-          position="fixed"
-          key={id}
-        >
+        <AppBarWraper position="fixed" key={id}>
           <Toolbar>
             <TitleContainer variant="h6">
               <img src="./image/Logo.png" alt="" />
             </TitleContainer>
             <ButtonContainer>
-              <ButtonWraper>
-                {item?.attributes.menubuttons.data[0]?.attributes.Button1}
-              </ButtonWraper>
-              <ButtonWraper>
-                {item?.attributes.menubuttons.data[0]?.attributes.Button2}
-              </ButtonWraper>
-              <ButtonWraper>
-                {item?.attributes.menubuttons.data[0]?.attributes.Button3}
-              </ButtonWraper>
-              <ButtonWraper>
-                {item?.attributes.menubuttons.data[0]?.attributes.Button4}
-              </ButtonWraper>
-              <ButtonWraper>
-                {item?.attributes.menubuttons.data[0]?.attributes.Button5}
-              </ButtonWraper>
+              {renderButton(item)}
+              <RightButton>
+                {item?.attributes.navbars.data[0]?.attributes.startbutton}
+              </RightButton>
             </ButtonContainer>
-            <ButtonWraper>
-              <SearchIcon />
-            </ButtonWraper>
-            <RightButton>{item?.attributes.startbutton}</RightButton>
+            <Box sx={{ display: { xs: "block", md: "none" }, color: "black" }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+              >
+                {renderButton(item)}
+                {item?.attributes.navbars.data[0]?.attributes.startbutton}
+              </Menu>
+            </Box>
           </Toolbar>
-        </AppBar>
+        </AppBarWraper>
       ))}
-    </div>
+    </DivWraper>
   );
 }
 export default Header;
+{
+  /* */
+}

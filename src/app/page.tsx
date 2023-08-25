@@ -12,6 +12,7 @@ import SectionNine from "./section-9/section-9";
 import SectionTen from "./section-10/section-10";
 import SectionEleven from "./section-11/section-11";
 import Footer from "./footer/footer";
+import Footerbottom from "./footerbottom/footerbottom";
 
 function HomePage() {
   return (
@@ -25,9 +26,10 @@ function HomePage() {
       <SectionSeven />
       <SectionEight />
       <SectionNine />
-      <SectionTen/>
-      <SectionEleven/>
-      <Footer/>
+      <SectionTen />
+      <SectionEleven />
+      <Footer />
+      <Footerbottom />
     </div>
   );
 }

@@ -3,7 +3,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import {
   Description,
+  DivContainer,
+  DivWrapper,
+  GridWrapper,
   Header,
+  ImageWrapper,
   LeftButton,
   LeftButtonWrapper,
   RigtContentHeader,
@@ -15,7 +19,7 @@ const Content = () => {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -34,54 +38,41 @@ const Content = () => {
   return (
     <>
       {data.map((item: any, id: number) => (
-        <Grid
-          container
-          spacing={2}
-          sx={{ marginTop: "100px", marginLeft: "300px" }}
-          key={id}
-        >
-          <Grid item xs={12} md={6}>
-            <div style={{ width: "450px" }}>
+        <Grid container spacing={2} sx={{ marginTop: "50px" }} key={id}>
+          <GridWrapper item xs={12} md={6}>
+            <DivWrapper>
               <Header>
                 {item?.attributes.leftcontents.data[0]?.attributes.title}
               </Header>
               <Description>
                 {item?.attributes.leftcontents.data[0]?.attributes.description}
               </Description>
-              <img
-                src="./image/Play Button.png"
-                style={{ padding: "20px 0px" }}
-              />
-            </div>
-            <LeftButtonWrapper style={{ padding: "20px 0px" }}>
-              <LeftButton>
-                {
-                  item?.attributes.leftcontentbuttons.data[0]?.attributes
-                    .Button1
-                }
-              </LeftButton>
-              <LeftButton>
-                {
-                  item?.attributes.leftcontentbuttons.data[0]?.attributes
-                    .Button2
-                }
-              </LeftButton>
-              <LeftButton>
-                {
-                  item?.attributes.leftcontentbuttons.data[0]?.attributes
-                    .Button3
-                }
-              </LeftButton>
-            </LeftButtonWrapper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <div
-              style={{
-                position: "absolute",
-                width: "300px",
-                textAlign: "center",
-              }}
-            >
+              <ImageWrapper src="./image/PlayButton.png" />
+
+              <LeftButtonWrapper>
+                <LeftButton>
+                  {
+                    item?.attributes.leftcontents.data[0]?.attributes
+                      .Button1
+                  }
+                </LeftButton>
+                <LeftButton>
+                  {
+                    item?.attributes.leftcontents.data[0]?.attributes
+                      .Button2
+                  }
+                </LeftButton>
+                <LeftButton>
+                  {
+                    item?.attributes.leftcontents.data[0]?.attributes
+                      .Button3
+                  }
+                </LeftButton>
+              </LeftButtonWrapper>
+            </DivWrapper>
+          </GridWrapper>
+          <GridWrapper item xs={12} md={6}>
+            <DivContainer>
               <RigtContentHeader>
                 {item?.attributes.right_contents.data[0]?.attributes.title}
               </RigtContentHeader>
@@ -91,9 +82,9 @@ const Content = () => {
                     .description
                 }
               </Description>
-            </div>
+            </DivContainer>
             <img src="./image/rightcontent.png" />
-          </Grid>
+          </GridWrapper>
         </Grid>
       ))}
     </>

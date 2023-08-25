@@ -1,23 +1,16 @@
-import { styled } from "@mui/material";
+import { Button, styled } from "@mui/material";
 
-export const ButtonWraper = styled("div")({
-  fontFamily: "Marcellus",
-  fontWeight: 400,
-  fontSize: "20px",
-  textTransform: "none",
-  color: "#1E3061",
-  textAlign: "center",
-  border: "1px solid black",
-  borderRadius: "35px",
-  width: "150px",
-  margin: "25px auto",
-});
 export const Title = styled("p")({
   fontFamily: "  Marcellus ",
   fontWeight: 400,
   fontSize: "20px",
   color: "#1E3161",
   textAlign: "center",
+  border: "1px solid black",
+  borderRadius: "35px",
+  width: "150px",
+  margin: "50px auto",
+  padding: "10px",
 });
 export const Header = styled("p")({
   fontFamily: "  Marcellus ",
@@ -32,7 +25,8 @@ export const Divwrapper = styled("div")({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
-  gap: "35px",
+  gap: "55px",
+  flexWrap: "wrap",
 });
 export const DivContent = styled("div")({
   textAlign: "center",

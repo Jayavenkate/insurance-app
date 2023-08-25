@@ -1,4 +1,4 @@
-import { Button, styled } from "@mui/material";
+import { Button, Grid, styled } from "@mui/material";
 
 export const ButtonWrapper = styled(Button)({
   textTransform: "none",
@@ -10,19 +10,54 @@ export const ButtonWrapper = styled(Button)({
   borderRadius: "35px",
   width: "170px",
 });
-export const Title = styled("p")({
+
+export const Title = styled("p")(({ theme }) => ({
   fontFamily: "  Marcellus ",
   fontWeight: 400,
   fontSize: "36px",
   color: "#1E3061",
-  width: "700px",
-  padding: "10px",
-});
-export const SubTitle = styled("p")({
+  width: "650px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "26px",
+    width: "350px",
+  },
+}));
+
+export const SubTitle = styled("p")(({ theme }) => ({
   fontFamily: "  Nunito ",
   fontWeight: 400,
   fontSize: "16px",
   color: "#1E3061",
-  width: "700px",
-  padding: "10px",
+  width: "500px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "12px",
+    width: "330px",
+  },
+}));
+export const GridWrapper = styled(Grid)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  flexWrap:"wrap"
+});
+export const GridWrapperLeft = styled(Grid)({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+});
+
+export const ContentLeft = styled("p")({
+  fontFamily: "  Nunito ",
+  fontWeight: 400,
+  fontSize: "16px",
+  color: "#1E3061",
+  width: "350px",
+});
+export const Review = styled("p")({
+  fontFamily: "  Nunito ",
+  fontWeight: 400,
+  fontSize: "16px",
+  color: "#1E3061",
 });

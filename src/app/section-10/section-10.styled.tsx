@@ -9,9 +9,9 @@ export const ButtonWraper = styled("div")({
   textAlign: "center",
   border: "1px solid black",
   borderRadius: "35px",
-  width: "200px",
+  width: "120px",
   padding: "10px 10px",
-  margin: "50px auto",
+  margin: "100px  auto 0px auto",
 });
 export const Header = styled("p")({
   fontFamily: "  Marcellus ",
@@ -51,5 +51,6 @@ export const ButtonCard = styled(Button)({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    gap: "35px",
+    gap: "55px",
+    flexWrap:"wrap"
   });

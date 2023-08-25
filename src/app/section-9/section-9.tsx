@@ -4,10 +4,13 @@ import { useEffect, useState } from "react";
 import {
   ButtonWraper,
   Description,
+  DivWrapper,
   Frame2description,
   Frame2header,
   Frame5number,
   Frame5text,
+  GridRightWrapper,
+  GridWrapper,
   Header,
 } from "./section-9.styled";
 
@@ -17,7 +20,7 @@ const SectionNine = () => {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -37,7 +40,7 @@ const SectionNine = () => {
     <>
       {data.map((item: any, id: number) => (
         <Grid container spacing={2} sx={{ marginTop: "50px" }} key={id}>
-          <Grid item xs={12} md={6}>
+          <GridWrapper item xs={12} md={6}>
             <Header>
               {item?.attributes.section_9s.data[0].attributes.header}
             </Header>
@@ -45,12 +48,12 @@ const SectionNine = () => {
               {item?.attributes.section_9s.data[0].attributes.description}
             </Description>
             <img src="./image/section9-A.png" />
-          </Grid>
-          <Grid item xs={12} md={6}>
+          </GridWrapper>
+          <GridRightWrapper item xs={12} md={6}>
             <img src="./image/section9-B.png" />
-            <div style={{ display: "flex", gap: "10px" }}>
+            <DivWrapper>
               <div>
-                <div style={{ display: "flex", gap: "10px" }}>
+                <DivWrapper>
                   <img
                     src="./image/certificate 1.png"
                     style={{ objectFit: "contain" }}
@@ -61,7 +64,7 @@ const SectionNine = () => {
                         .frame2header
                     }
                   </Frame2header>
-                </div>
+                </DivWrapper>
                 <Frame2description>
                   {
                     item?.attributes.section_9s.data[0].attributes
@@ -70,7 +73,7 @@ const SectionNine = () => {
                 </Frame2description>
               </div>
               <div>
-                <div style={{ display: "flex", gap: "10px" }}>
+                <DivWrapper>
                   <img
                     src="./image/handshake 1.png"
                     style={{ objectFit: "contain" }}
@@ -81,7 +84,7 @@ const SectionNine = () => {
                         .frame3header
                     }
                   </Frame2header>
-                </div>
+                </DivWrapper>
                 <Frame2description>
                   {
                     item?.attributes.section_9s.data[0].attributes
@@ -89,8 +92,8 @@ const SectionNine = () => {
                   }
                 </Frame2description>
               </div>
-            </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+            </DivWrapper>
+            <DivWrapper>
               <img src="./image/call 1.png" style={{ objectFit: "contain" }} />
               <div>
                 <Frame5number>
@@ -100,11 +103,11 @@ const SectionNine = () => {
                   {item?.attributes.section_9s.data[0].attributes.frame5text}
                 </Frame5text>
               </div>
-            </div>
+            </DivWrapper>
             <ButtonWraper>
               {item?.attributes.section_9s.data[0].attributes.buttontext}
             </ButtonWraper>
-          </Grid>
+          </GridRightWrapper>
         </Grid>
       ))}
     </>

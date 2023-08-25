@@ -6,8 +6,15 @@ import {
   CardDescription,
   CardHeader,
   CardWrapper,
+  DivWrapper,
   ImageWrapper,
 } from "./card.styled";
+import {
+  Description,
+  DivContainer,
+  GridWrapper,
+  RigtContentHeader,
+} from "../content/content.styled";
 
 function Card() {
   const [data, setData] = useState([]);
@@ -15,7 +22,7 @@ function Card() {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -34,40 +41,39 @@ function Card() {
     <div>
       {data.map((item: any, id: number) => (
         <CardWrapper key={id}>
-          <div>
-            <CardContainer style={{ position: "absolute" }}>
+          <DivWrapper>
+            <DivContainer>
               <CardHeader>
-                {item?.attributes.section_3s.data[0]?.attributes.title}
+                {item?.attributes.section_3s.data[0]?.attributes.header}
               </CardHeader>
               <CardDescription>
                 {item?.attributes.section_3s.data[0]?.attributes.description}
               </CardDescription>
-            </CardContainer>
+            </DivContainer>
             <ImageWrapper src="./image/card-1.png" />
-          </div>
-
-          <div>
-            <CardContainer style={{ position: "absolute" }}>
+          </DivWrapper>
+          <DivWrapper>
+            <DivContainer>
               <CardHeader>
-                {item?.attributes.section_3s.data[1]?.attributes.title}
+                {item?.attributes.section_3s.data[1]?.attributes.header}
               </CardHeader>
               <CardDescription>
                 {item?.attributes.section_3s.data[1]?.attributes.description}
               </CardDescription>
-            </CardContainer>
+            </DivContainer>
             <ImageWrapper src="./image/card-2.png" />
-          </div>
-          <div>
-            <CardContainer style={{ position: "absolute" }}>
+          </DivWrapper>
+          <DivWrapper>
+            <DivContainer>
               <CardHeader>
-                {item?.attributes.section_3s.data[2]?.attributes.title}
+                {item?.attributes.section_3s.data[2]?.attributes.header}
               </CardHeader>
               <CardDescription>
                 {item?.attributes.section_3s.data[2]?.attributes.description}
               </CardDescription>
-            </CardContainer>
+            </DivContainer>
             <ImageWrapper src="./image/card-3.png" />
-          </div>
+          </DivWrapper>
         </CardWrapper>
       ))}
     </div>

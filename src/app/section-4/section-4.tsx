@@ -1,7 +1,15 @@
 import { Button, Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ButtonWrapper, SubTitle, Title } from "./section-4.styled";
+import {
+  ButtonWrapper,
+  ContentLeft,
+  GridWrapper,
+  GridWrapperLeft,
+  Review,
+  SubTitle,
+  Title,
+} from "./section-4.styled";
 
 const SectionFour = () => {
   const [data, setData] = useState([]);
@@ -9,7 +17,7 @@ const SectionFour = () => {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -28,27 +36,32 @@ const SectionFour = () => {
   return (
     <>
       {data.map((item: any, id: number) => (
-        <Grid
-          container
-          spacing={2}
-          sx={{ marginTop: "100px", marginLeft: "300px" }}
-          key={id}
-        >
-          <Grid>
-            <ButtonWrapper>
-              {item?.attributes.section_4s.data[0]?.attributes.buttontext}
-            </ButtonWrapper>
-            <Title>
-              {item?.attributes.section_4s.data[0]?.attributes.title}
-            </Title>
-            <SubTitle>
-              {item?.attributes.section_4s.data[0]?.attributes.subtitle}
-            </SubTitle>
-          </Grid>
-          <Grid>
-            <p>{item?.attributes.section_4s.data[0]?.attributes.description}</p>
+        <Grid container spacing={2} sx={{ marginTop: "50px" }} key={id}>
+          <GridWrapper item xs={12} md={6}>
+            <div>
+              <ButtonWrapper>
+                {item?.attributes.section_4s.data[0]?.attributes.buttontext}
+              </ButtonWrapper>
+              <Title>
+                {item?.attributes.section_4s.data[0]?.attributes.title}
+              </Title>
+              <SubTitle>
+                {item?.attributes.section_4s.data[0]?.attributes.subtitle}
+              </SubTitle>
+            </div>
+          </GridWrapper>
+          <GridWrapperLeft item xs={12} md={6}>
+            <ContentLeft>
+              {item?.attributes.section_4s.data[0]?.attributes.description}
+            </ContentLeft>
             <img src="./image/Avatar-4.png" />
-          </Grid>
+            <Review>
+              {item?.attributes.section_4s.data[0]?.attributes.reviewtext}
+            </Review>
+            <Review>
+              {item?.attributes.section_4s.data[0]?.attributes.reviewsubcontent}
+            </Review>
+          </GridWrapperLeft>
         </Grid>
       ))}
     </>

@@ -6,16 +6,6 @@ export const Divwrapper = styled("div")({
   justifyContent: "center",
   gap: "15px",
 });
-export const Title = styled("h2")({
-  fontFamily: "  Marcellus ",
-  fontWeight: 400,
-  fontSize: "36px",
-  color: "#1E3061",
-  textAlign: "center",
-  width: "640px",
-  margin: "0 auto",
-  marginTop: "40px",
-});
 
 export const Header = styled("p")({
   fontFamily: "  Marcellus ",
@@ -34,10 +24,26 @@ export const Description = styled("p")({
 export const GridWrapper = styled(Grid)({
   display: "flex",
   alignItems: "center",
-  justifyContent: "flex-start",
+  justifyContent: "center",
 });
 export const GridContainer = styled(Grid)({
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
 });
+
+export const Title = styled("h2")(({ theme }) => ({
+  fontFamily: "  Marcellus ",
+  fontWeight: 400,
+  fontSize: "36px",
+  color: "#1E3061",
+  textAlign: "center",
+  width: "640px",
+  margin: "0 auto",
+  marginTop: "40px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "26px",
+    width:"350px"
+  },
+}));

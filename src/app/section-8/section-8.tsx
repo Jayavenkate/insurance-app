@@ -1,13 +1,7 @@
 import { Button } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-  ButtonWraper,
-  DivContent,
-  Divwrapper,
-  Header,
-  Title,
-} from "./section-8.styled";
+import { DivContent, Divwrapper, Header, Title } from "./section-8.styled";
 
 const SectionEight = () => {
   const [data, setData] = useState([]);
@@ -15,7 +9,7 @@ const SectionEight = () => {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -32,7 +26,14 @@ const SectionEight = () => {
   }, []);
   const renderimage = () => {
     return (
-      <div>
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <img src="./image/Facebook.png" />
         <img src="./image/Instagram.png" />
         <img src="./image/Twitter.png" />
@@ -42,14 +43,10 @@ const SectionEight = () => {
 
   return (
     <>
-      {data.map((item: any,id:number) => (
+      {data.map((item: any, id: number) => (
         <div key={id}>
           <div>
-            <ButtonWraper>
-              <Title>
-                {item?.attributes.section_8s.data[0].attributes.text}
-              </Title>
-            </ButtonWraper>
+            <Title>{item?.attributes.section_8s.data[0].attributes.text}</Title>
             <Header>
               {item?.attributes.section_8s.data[0].attributes.header}
             </Header>

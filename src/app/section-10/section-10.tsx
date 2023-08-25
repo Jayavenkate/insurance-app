@@ -1,6 +1,7 @@
 import { Button, Card, Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import {
   ButtonCard,
   ButtonWraper,
@@ -16,7 +17,7 @@ const SectionTen = () => {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -42,6 +43,7 @@ const SectionTen = () => {
         </Frame6description>
         <ButtonCard>
           {item?.attributes.section_10s.data[0].attributes.frame6button}
+          <ArrowRightAltIcon />
         </ButtonCard>
       </div>
     );

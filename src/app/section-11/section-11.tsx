@@ -1,15 +1,15 @@
 import { Button, Card, Grid } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Description, Header } from "./section-11.styled";
-
+import { CardWrapper, Description, Header } from "./section-11.styled";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 const SectionEleven = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:1337/api/navbars?populate=*",
+          "http://localhost:1337/api/homepages?populate=*",
           {
             headers: {
               Authorization: "bearer" + process.env.REACT_APP_API_TOKEN,
@@ -28,21 +28,7 @@ const SectionEleven = () => {
   return (
     <>
       {data.map((item: any, id: number) => (
-        <Card
-          sx={{
-            backgroundColor: "#B79C75",
-            width: "1000px",
-            margin: "40px auto",
-            borderRadius: "35px",
-            height: "230px",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "40px",
-          }}
-          key={id}
-        >
+        <CardWrapper key={id}>
           <div>
             <Header>
               {item?.attributes.section_11s.data[0].attributes.header}
@@ -65,7 +51,7 @@ const SectionEleven = () => {
               }}
             />
           </div>
-        </Card>
+        </CardWrapper>
       ))}
     </>
   );

@@ -13,8 +13,9 @@ export const DivContainer = styled("div")({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
-  gap: "35px",
+  gap: "75px",
   marginTop: "40px",
+  flexWrap:"wrap"
 });
 export const Title1 = styled("h3")({
   fontFamily: "Martel Sans ",

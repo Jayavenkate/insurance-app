@@ -19,6 +19,7 @@ export const CardContainer = styled("div")({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+  position: "absolute",
 });
 
 export const CardWrapper = styled("div")({
@@ -26,9 +27,20 @@ export const CardWrapper = styled("div")({
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
-  gap: "35px",
   marginTop: "80px",
+  flexWrap: "wrap",
+  gap: "50px",
 });
-export const ImageWrapper = styled("img")({
-  width: "360px",
+
+export const ImageWrapper = styled("img")(({ theme }) => ({
+  width: "400px",
+  [theme.breakpoints.down("md")]: {
+    width: "360px",
+  },
+}));
+export const DivWrapper = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
 });
