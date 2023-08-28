@@ -13,10 +13,11 @@ import SectionTen from "./section-10/section-10";
 import SectionEleven from "./section-11/section-11";
 import Footer from "./footer/footer";
 import Footerbottom from "./footerbottom/footerbottom";
+import { DivWrapper } from "./layout.styled";
 
 function HomePage() {
   return (
-    <div>
+    <DivWrapper>
       <Header />
       <Content />
       <Card />
@@ -30,7 +31,7 @@ function HomePage() {
       <SectionEleven />
       <Footer />
       <Footerbottom />
-    </div>
+    </DivWrapper>
   );
 }
 export default HomePage;
