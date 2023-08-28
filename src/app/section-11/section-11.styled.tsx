@@ -1,13 +1,15 @@
 import { Card, Grid, styled } from "@mui/material";
 
-export const Header = styled("p")({
-  fontFamily: "  Marcellus ",
+export const Header = styled("p")(({ theme }) => ({
+  fontFamily: "Marcellus ",
   fontWeight: 400,
   fontSize: "36px",
   color: "#1E3161",
   marginBottom: "0px",
-});
-
+  [theme.breakpoints.down("md")]: {
+    fontSize: "28px",
+  },
+}));
 export const Description = styled("p")({
   fontFamily: "  Nunito ",
   fontWeight: 400,
@@ -28,6 +30,8 @@ export const CardWrapper = styled(Card)(({ theme }) => ({
   gap: "40px",
   flexWrap: "wrap",
   [theme.breakpoints.down("md")]: {
+    textAlign: "center",
     padding: "10px",
+    height: "300px",
   },
 }));

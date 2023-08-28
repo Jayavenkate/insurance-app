@@ -5,7 +5,6 @@ export const GridRightWrapper = styled("div")(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     margin: 0,
     textAlign: "center",
-    padding:"35px",
-    
+    padding: "35px 0px",
   },
 }));

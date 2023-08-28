@@ -18,7 +18,7 @@ export const Address = styled("p")({
   fontWeight: 400,
   fontSize: "24px",
   color: "#1E3061",
-  width: "350px",
+  width: "330px",
 });
 
 export const Header = styled("h4")({
@@ -72,7 +72,7 @@ export const DivAddressWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
   flexWrap: "wrap",
   [theme.breakpoints.down("md")]: {
-    gap:"20px",
+    gap: "20px",
     margin: "auto",
     alignItems: "center",
     justifyContent: "center",
