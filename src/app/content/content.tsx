@@ -36,7 +36,7 @@ const Content = () => {
   }, []);
 
   return (
-    <>
+    <div>
       {data.map((item: any, id: number) => (
         <Grid container spacing={2} sx={{ marginTop: "50px" }} key={id}>
           <GridWrapper item xs={12} md={6}>
@@ -87,7 +87,7 @@ const Content = () => {
           </GridWrapper>
         </Grid>
       ))}
-    </>
+    </div>
   );
 };
 export default Content;

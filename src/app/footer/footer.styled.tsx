@@ -72,6 +72,7 @@ export const DivAddressWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
   flexWrap: "wrap",
   [theme.breakpoints.down("md")]: {
+    gap:"20px",
     margin: "auto",
     alignItems: "center",
     justifyContent: "center",

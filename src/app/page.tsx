@@ -17,7 +17,7 @@ import { DivWrapper } from "./layout.styled";
 
 function HomePage() {
   return (
-    <DivWrapper>
+    <div>
       <Header />
       <Content />
       <Card />
@@ -31,7 +31,7 @@ function HomePage() {
       <SectionEleven />
       <Footer />
       <Footerbottom />
-    </DivWrapper>
+    </div>
   );
 }
 export default HomePage;

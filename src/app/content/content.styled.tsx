@@ -50,14 +50,13 @@ export const LeftButtonWrapper = styled("div")(({ theme }) => ({
     width: "350px",
   },
 }));
-export const GridWrapper = styled(Grid)({
+
+export const GridWrapper = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  flexWrap: "wrap",
-});
-
+  justifyContent: "space-around",
+}));
 export const DivWrapper = styled("div")({
   maxWidth: "600px",
 });

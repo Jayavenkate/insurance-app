@@ -5,6 +5,7 @@ import {
   ButtonWraper,
   Description,
   DivWrapper,
+  DivWrapperContenht,
   Frame2description,
   Frame2header,
   Frame5number,
@@ -12,6 +13,7 @@ import {
   GridRightWrapper,
   GridWrapper,
   Header,
+  ImageWrapper,
 } from "./section-9.styled";
 
 const SectionNine = () => {
@@ -47,13 +49,13 @@ const SectionNine = () => {
             <Description>
               {item?.attributes.section_9s.data[0].attributes.description}
             </Description>
-            <img src="./image/section9-A.png" />
+            <ImageWrapper src="./image/section9-A.png" />
           </GridWrapper>
           <GridRightWrapper item xs={12} md={6}>
-            <img src="./image/section9-B.png" />
+            <ImageWrapper src="./image/section9-B.png" />
             <DivWrapper>
               <div>
-                <DivWrapper>
+                <DivWrapperContenht>
                   <img
                     src="./image/certificate 1.png"
                     style={{ objectFit: "contain" }}
@@ -64,7 +66,7 @@ const SectionNine = () => {
                         .frame2header
                     }
                   </Frame2header>
-                </DivWrapper>
+                </DivWrapperContenht>
                 <Frame2description>
                   {
                     item?.attributes.section_9s.data[0].attributes
@@ -73,7 +75,7 @@ const SectionNine = () => {
                 </Frame2description>
               </div>
               <div>
-                <DivWrapper>
+                <DivWrapperContenht>
                   <img
                     src="./image/handshake 1.png"
                     style={{ objectFit: "contain" }}
@@ -84,7 +86,7 @@ const SectionNine = () => {
                         .frame3header
                     }
                   </Frame2header>
-                </DivWrapper>
+                </DivWrapperContenht>
                 <Frame2description>
                   {
                     item?.attributes.section_9s.data[0].attributes

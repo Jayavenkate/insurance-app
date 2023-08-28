@@ -7,6 +7,7 @@ import {
   GridContainer,
   GridWrapper,
   Header,
+  Imagewrapper,
   Title,
 } from "./section-6.styled";
 
@@ -34,19 +35,18 @@ const SectionSix = () => {
 
   return (
     <>
-      {data.map((item: any,id:number) => (
+      {data.map((item: any, id: number) => (
         <div key={id}>
           <Title>{item?.attributes.section_6s.data[0]?.attributes.title}</Title>
           <Grid container spacing={2} sx={{ marginTop: "40px" }}>
             <GridContainer item xs={12} md={6}>
-              <img src="./image/section-6.png" />
+              <Imagewrapper src="./image/section-6.png" />
             </GridContainer>
             <GridWrapper item xs={12} md={6}>
               <div>
                 <Divwrapper>
-                  <div>
-                    <img src="./image/checklisticon.png" alt="" />
-                  </div>
+                  <img src="./image/checklisticon.png" alt="" />
+
                   <div>
                     <Header>
                       {item?.attributes.section_6s.data[1]?.attributes.header}
@@ -60,9 +60,7 @@ const SectionSix = () => {
                   </div>
                 </Divwrapper>
                 <Divwrapper>
-                  <div>
                     <img src="./image/checklisticon.png" alt="" />
-                  </div>
                   <div>
                     <Header>
                       {item?.attributes.section_6s.data[2]?.attributes.header}
@@ -76,9 +74,7 @@ const SectionSix = () => {
                   </div>
                 </Divwrapper>
                 <Divwrapper>
-                  <div>
                     <img src="./image/checklisticon.png" alt="" />
-                  </div>
                   <div>
                     <Header>
                       {item?.attributes.section_6s.data[3]?.attributes.header}
@@ -92,9 +88,7 @@ const SectionSix = () => {
                   </div>
                 </Divwrapper>
                 <Divwrapper>
-                  <div>
                     <img src="./image/checklisticon.png" alt="" />
-                  </div>
                   <div>
                     <Header>
                       {item?.attributes.section_6s.data[4]?.attributes.header}

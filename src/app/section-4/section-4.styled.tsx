@@ -31,21 +31,21 @@ export const SubTitle = styled("p")(({ theme }) => ({
   width: "500px",
   [theme.breakpoints.down("md")]: {
     fontSize: "12px",
-    width: "330px",
+    width: "350px",
   },
 }));
 export const GridWrapper = styled(Grid)({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  flexWrap:"wrap"
+  justifyContent: "space-around",
+ 
 });
 export const GridWrapperLeft = styled(Grid)({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "space-around",
 });
 
 export const ContentLeft = styled("p")({

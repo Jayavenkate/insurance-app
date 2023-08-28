@@ -1,28 +1,39 @@
 import { Grid, styled } from "@mui/material";
 
-export const Header = styled("p")({
+export const Header = styled("p")(({ theme }) => ({
   fontFamily: "  Marcellus ",
   fontWeight: 400,
   fontSize: "36px",
   color: "#1E3161",
   width: "490px",
-});
+  [theme.breakpoints.down("md")]: {
+    width: "350px",
+    fontSize: "28px",
+    margin: 0,
+  },
+}));
 
-export const Description = styled("p")({
+export const Description = styled("p")(({ theme }) => ({
   fontFamily: "Nunito ",
   fontWeight: 400,
   fontSize: "16px",
   color: "#1E3161",
   width: "490px",
-});
+  [theme.breakpoints.down("md")]: {
+    width: "350px",
+    fontSize: "12px",
+  },
+}));
 
-export const Frame2header = styled("h3")({
+export const Frame2header = styled("h3")(({ theme }) => ({
   fontFamily: "Marcellus ",
   fontWeight: 400,
   fontSize: "24px",
   color: "#1E3161",
-});
-
+  [theme.breakpoints.down("md")]: {
+    fontSize: "18px",
+  },
+}));
 export const Frame2description = styled("h3")({
   fontFamily: "Nunito ",
   fontWeight: 400,
@@ -65,11 +76,17 @@ export const GridWrapper = styled(Grid)({
   justifyContent: "center",
 });
 
+export const ImageWrapper = styled("img")(({ theme }) => ({
+  [theme.breakpoints.down("md")]: {
+    width: "350px",
+  },
+}));
 export const GridRightWrapper = styled(Grid)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
+
   [theme.breakpoints.down("md")]: {
     alignItems: "center",
   },
@@ -77,4 +94,13 @@ export const GridRightWrapper = styled(Grid)(({ theme }) => ({
 export const DivWrapper = styled("div")({
   display: "flex",
   gap: "10px",
+  alignItems: "center",
+  justifyContent: "space-around",
+});
+
+export const DivWrapperContenht = styled("div")({
+  display: "flex",
+  gap: "5px",
+  alignItems: "center",
+  justifyContent: "center",
 });
