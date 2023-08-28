@@ -14,7 +14,7 @@ import {
   RightButton,
   TitleContainer,
 } from "./header.styled";
-import { Box, IconButton, Menu } from "@mui/material";
+import { Box, IconButton, Menu, MenuItem, Typography } from "@mui/material";
 
 function Header() {
   const [data, setData] = useState([]);
@@ -105,8 +105,19 @@ function Header() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {renderButton(item)}
-                {item?.attributes.navbars.data[0]?.attributes.startbutton}
+                <MenuItem
+                  key={id}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {renderButton(item)}
+                  {item?.attributes.navbars.data[0]?.attributes.startbutton}
+                </MenuItem>
               </Menu>
             </Box>
           </Toolbar>

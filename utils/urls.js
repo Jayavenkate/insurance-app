@@ -4,4 +4,4 @@ export const API_URL =
   "http://127.0.0.1:1337" ||
   "http://localhost:1337" ||
   "https://insuranceapp.onrender.com";
-//   https://insuranceapp.onrender.com
+
