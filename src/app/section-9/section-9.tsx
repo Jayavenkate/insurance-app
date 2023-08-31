@@ -101,8 +101,7 @@ const SectionNine = () => {
               <div>
                 <Button variant="text">
                   <Link
-                    href="tel:9600405613"
-
+                    href="tel:919894666552"
                     style={{
                       textDecoration: "underline",
                       textDecorationColor: "GrayText",
@@ -111,19 +110,6 @@ const SectionNine = () => {
                   >
                     <Frame5number>+919894666552</Frame5number>
                   </Link>
-                  {/* <Link
-                    href="facetime:9600405613"
-                    style={{
-                      textDecoration: "underline",
-                      textDecorationColor: "GrayText",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <Frame5number>
-                    
-                      +919600405613
-                    </Frame5number>
-                  </Link> */}
                 </Button>
 
                 <Frame5text>
