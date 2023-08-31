@@ -99,9 +99,23 @@ const SectionNine = () => {
             <DivWrapper>
               <img src="./image/call 1.png" style={{ objectFit: "contain" }} />
               <div>
-                <Frame5number>
-                  {item?.attributes.section_9s.data[0].attributes.frame5number}
-                </Frame5number>
+                <Button variant="text">
+                  <Frame5number>
+                    {
+                      item?.attributes.section_9s.data[0].attributes
+                        .frame5number
+                    }
+                  </Frame5number>
+                  <a
+                    href="tel:9600405613"
+                    data-tab-setting="hover"
+                    data-flyout="disable"
+                    title="Call"
+                  >
+                    Call
+                  </a>
+                </Button>
+
                 <Frame5text>
                   {item?.attributes.section_9s.data[0].attributes.frame5text}
                 </Frame5text>
