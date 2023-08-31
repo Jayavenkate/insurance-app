@@ -40,7 +40,7 @@ const SectionSix = () => {
           <Title>{item?.attributes.section_6s.data[0]?.attributes.title}</Title>
           <Grid container spacing={2} sx={{ marginTop: "40px" }}>
             <GridContainer item xs={12} md={6}>
-              <Imagewrapper src="./image/section-6.png" />
+              <Imagewrapper src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR93oM6fJ9Y_qDfLsln65ZZhxgOTuSCKdxDsw&usqp=CAU" />
             </GridContainer>
             <GridWrapper item xs={12} md={6}>
               <div>

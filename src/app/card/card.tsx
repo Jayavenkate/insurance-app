@@ -50,7 +50,7 @@ function Card() {
                 {item?.attributes.section_3s.data[0]?.attributes.description}
               </CardDescription>
             </DivContainer>
-            <ImageWrapper src="./image/card-1.png" />
+            <ImageWrapper src="https://5.imimg.com/data5/SELLER/Default/2020/12/WI/VR/VK/118676901/oppo-f17-pro-mobile-500x500.jpg" />
           </DivWrapper>
           <DivWrapper>
             <DivContainer>
@@ -61,7 +61,7 @@ function Card() {
                 {item?.attributes.section_3s.data[1]?.attributes.description}
               </CardDescription>
             </DivContainer>
-            <ImageWrapper src="./image/card-2.png" />
+            <ImageWrapper src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjvA3SGhnwcyzII1CiS0jNSAO3gShgHx7RKw&usqp=CAU" />
           </DivWrapper>
           <DivWrapper>
             <DivContainer>
@@ -72,7 +72,7 @@ function Card() {
                 {item?.attributes.section_3s.data[2]?.attributes.description}
               </CardDescription>
             </DivContainer>
-            <ImageWrapper src="./image/card-3.png" />
+            <ImageWrapper src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIDL_80iuqWrA_UgfNIyYPIFcFoI70Rr--7w&usqp=CAU" />
           </DivWrapper>
         </CardWrapper>
       ))}

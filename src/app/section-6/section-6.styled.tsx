@@ -57,6 +57,8 @@ export const Title = styled("h2")(({ theme }) => ({
 }));
 
 export const Imagewrapper = styled("img")(({ theme }) => ({
+  width:"550px",
+  objectFit:"cover",
   [theme.breakpoints.down("md")]: {
     objectFit: "contain",
     width: "350px",

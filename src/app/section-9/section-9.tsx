@@ -134,9 +134,9 @@ const SectionNine = () => {
               />
               Whatsapp
             </Link>
-            <ButtonWraper>
+            {/* <ButtonWraper>
               {item?.attributes.section_9s.data[0].attributes.buttontext}
-            </ButtonWraper>
+            </ButtonWraper> */}
           </GridRightWrapper>
         </Grid>
       ))}
