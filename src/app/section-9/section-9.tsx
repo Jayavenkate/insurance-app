@@ -106,6 +106,11 @@ const SectionNine = () => {
                 </Frame5text>
               </div>
             </DivWrapper>
+            <Button sx={{ border: "1px solid" }}>
+              <a href="https://wa.me/+919600405613?text=Hi" target="_blank">
+                Whataupp
+              </a>
+            </Button>
             <ButtonWraper>
               {item?.attributes.section_9s.data[0].attributes.buttontext}
             </ButtonWraper>
