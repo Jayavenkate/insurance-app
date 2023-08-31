@@ -100,20 +100,30 @@ const SectionNine = () => {
               <img src="./image/call 1.png" style={{ objectFit: "contain" }} />
               <div>
                 <Button variant="text">
-                  <Frame5number>
-                    {
-                      item?.attributes.section_9s.data[0].attributes
-                        .frame5number
-                    }
-                  </Frame5number>
-                  <a
+                  <Link
                     href="tel:9600405613"
-                    data-tab-setting="hover"
-                    data-flyout="disable"
-                    title="Call"
+
+                    style={{
+                      textDecoration: "underline",
+                      textDecorationColor: "GrayText",
+                      cursor: "pointer",
+                    }}
                   >
-                    Call
-                  </a>
+                    <Frame5number>+919894666552</Frame5number>
+                  </Link>
+                  {/* <Link
+                    href="facetime:9600405613"
+                    style={{
+                      textDecoration: "underline",
+                      textDecorationColor: "GrayText",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Frame5number>
+                    
+                      +919600405613
+                    </Frame5number>
+                  </Link> */}
                 </Button>
 
                 <Frame5text>
@@ -122,7 +132,7 @@ const SectionNine = () => {
               </div>
             </DivWrapper>
             <Link
-              href="https://wa.me/+919600405613?text=Hi"
+              href="https://wa.me/+919894666552?text=Hi"
               style={{
                 display: "flex",
                 alignItems: "center",
