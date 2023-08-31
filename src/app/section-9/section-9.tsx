@@ -107,8 +107,16 @@ const SectionNine = () => {
                 </Frame5text>
               </div>
             </DivWrapper>
-            {/* <Button sx={{ border: "1px solid" }}> */}
-            <Link href="https://wa.me/+919600405613?text=Hi" style={{display:"flex" ,alignItems:"center",justifyContent:"center",marginBottom:"20px",gap:"10px"}}>
+            <Link
+              href="https://wa.me/+919600405613?text=Hi"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: "20px",
+                gap: "10px",
+              }}
+            >
               <img
                 src="	https://bestmoneygold.in/wp-content/uploads/2023/02/139413-whatsappp-icone-verde.gif"
                 alt="whatsapp"
@@ -116,7 +124,6 @@ const SectionNine = () => {
               />
               Whatsapp
             </Link>
-            {/* </Button> */}
             <ButtonWraper>
               {item?.attributes.section_9s.data[0].attributes.buttontext}
             </ButtonWraper>
